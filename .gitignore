@@ -1,0 +1,8 @@
+# Untracked files:
+    *.tif
+    *.gtf
+    *.txt
+    *.xml
+
+# Exceptions
+    !*_rs.tif
