@@ -2,8 +2,12 @@
 
 In your workspace you should have :
 - README.md
-- Directory "L7 ETM_ SLC-on _1999-2003_"
-- Directory "LC81610282015276-SC20151211121326"
+- Directory "LE7"
+- SubDirectory "LE7/src"
+- Directory "LC8"
+- SubDirectory "LC8/src"
 - script.sh
 - segm.sh
+- compile-{lc8,le7}
+
 
