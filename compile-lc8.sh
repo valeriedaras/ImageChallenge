@@ -8,8 +8,8 @@ done
 
 convert -combine {4,3,2}-projected.tif rgb.tif
 
-#convert -depth 8 -modulate 800,150 rgb.tif rgb-corrected.tif
-convert -modulate 800,150 rgb.tif rgb-corrected.tif
+convert -depth 8 -modulate 900,250 -sigmoidal-contrast 4x50% rgb.tif rgb-corrected.tif
+#convert -modulate 800,150 rgb.tif rgb-corrected.tif
 
 listgeo -tfw 4-projected.tif
 
@@ -18,5 +18,11 @@ mv 4-projected.tfw rgb-corrected.tfw
 gdal_edit.py -a_srs EPSG:3857 rgb-corrected.tif
 
 convert -resize 10% rgb-corrected.tif rgb-corrected-resized.tif
+
+for BAND in {4,3,2}; do
+rm $BAND-projected.tif
+done
+
+rm rgb-corrected.tfw rgb.tif rgb-corrected.tif
 
 cd ..

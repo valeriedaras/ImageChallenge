@@ -20,4 +20,10 @@ convert -channel RGB -modulate 300,150 -sigmoidal-contrast 4x50% rgb.tif rgb-cor
 
 convert -resize 10% rgb-corrected.tif rgb-corrected-resized.tif
 
+for BAND in {3,2,1}; do
+rm $BAND-projected.tif
+done
+
+rm rgb.tif rgb-corrected.tif
+
 cd ..

@@ -12,4 +12,6 @@ docker run -v $(pwd):/data otbseg otbcli_LSMSSmallRegionsMerging -in /data/filte
 
 docker run -v $(pwd):/data otbseg otbcli_ColorMapping -in /data/filtered-seg-corrected.tif -method image -method.image.in /data/rgb-corrected-resized.tif -out /data/filtered-segmented.tif 
 
+rm filtered-range.tif filtered-spat.tif filtered-seg.tif filtered-seg-corrected.tif
+
 cd .. 
