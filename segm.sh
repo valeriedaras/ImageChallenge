@@ -14,6 +14,8 @@ docker run -v $(pwd):/data otbseg otbcli_ColorMapping -in /data/filtered-seg-cor
 
 rm filtered-range.tif filtered-spat.tif filtered-seg.tif filtered-seg-corrected.tif
 
-ogr2ogr -f CSV /data/filtered-segmented.csv /data/filtered-segmented.shp -lco GEOMETRY=AS_XYZ
+ogr2ogr -f CSV filtered-segmented.csv filtered-segmented.shp
+
+docker run -v $(pwd):/data otbseg otbcli_ColorMapping -in /data/filtered-segmented.tif -method custom -method.custom.lut /data/custom.txt -out /data/final-colored-clustered.tif
 
 cd .. 
