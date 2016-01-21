@@ -12,7 +12,7 @@ docker run -v $(pwd):/data otbseg otbcli_LSMSVectorization -in /data/rgb-correct
 
 docker run -v $(pwd):/data otbseg otbcli_ColorMapping -in /data/filtered-seg-corrected.tif -method image -method.image.in /data/rgb-corrected-resized.tif -out /data/filtered-segmented.tif 
 
-rm filtered-range.tif filtered-spat.tif filtered-seg.tif filtered-seg-corrected.tif filtered-segmented.dbf filtered-segmented.prj filtered-segmented.shx
+rm filtered-range.tif filtered-spat.tif filtered-seg.tif filtered-seg-corrected.tif
 
 ogr2ogr -f CSV /data/filtered-segmented.csv /data/filtered-segmented.shp -lco GEOMETRY=AS_XYZ
 
