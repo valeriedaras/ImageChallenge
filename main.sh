@@ -17,15 +17,15 @@ then
 fi
 
 function compileLC8(){
-    ./compile-lc8.sh
+    bash ./compile-lc8.sh
 }
 
 function compileLE7(){
-    ./compile-le7.sh
+    bash ./compile-le7.sh
 }
 
 function segmentation(){
-    ./segm.sh $1
+    bash ./segm.sh $1
 }
 
 while getopts ":cs" opt; do
