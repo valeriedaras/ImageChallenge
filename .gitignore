@@ -5,4 +5,4 @@
     *.xml
 
 # Exceptions
-    !*_rs.tif
+    !filtered-segmented.tif

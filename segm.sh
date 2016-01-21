@@ -16,4 +16,5 @@ rm filtered-range.tif filtered-spat.tif filtered-seg.tif
 
 ogr2ogr -overwrite -f CSV filtered-segmented.csv filtered-segmented.shp
 
+
 cd .. 
