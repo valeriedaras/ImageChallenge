@@ -49,22 +49,10 @@ class Classifier:
                 p = l
                 d = k
         return p
-            
-    
 
-#conf = SparkConf().setAppName(argv[2]).setMaster(argv[1])
-#sc = SparkContext(conf=conf)
-
-#colors = ['255  0  0', '0 255 0', '0 0 255', '255 255 0', '255 140 0', '255 105 180', '165 42 42', '211 211 211', '0 255 255', '255 0 255']
-
-#kmeans = KMeans.train(data, 5, maxIterations=10, runs=5, initializationMode='random')
-#gauss = GaussianMixture.train(data, 6)
-
-#kmap = data.map(lambda r: (r[0], colors[kmeans.predict(r)]))
-#gmap = data.map(lambda r: (r[0], colors[gauss.predict(r)]))
 
 tmp = NamedTemporaryFile(mode='w+b', delete=True)
-file = open('LC8/filtered-segmented.csv', 'r')
+file = open('LE7/filtered-segmented.csv', 'r')
 file.readline()
 tmp.write(file.read())
 file.close()
@@ -76,7 +64,7 @@ custom = Classifier()
 
 map = data.map(lambda r: (custom.predict(r[1], r[2], r[3]), (r[0], r[4])))
 
-file = open('LC8/custom.txt', 'w')
+file = open('LE7/custom.txt', 'w')
 
 for line in map.map(lambda r: str(r[1][0]) + ' ' + str(custom.C[r[0]].display) + '\n').collect():
     file.write(line)
@@ -85,7 +73,7 @@ file.close()
 
 stat = map.map(lambda r: (r[0], r[1][1])).reduceByKey(lambda x, y: x + y)
 
-file = open('LC8/stat.txt', 'w')
+file = open('LE7/stat.txt', 'w')
 
 for line in stat.map(lambda r: str(r[0]) + ' ' + str(r[1]) + '\n').collect():
     file.write(line)
