@@ -1,0 +1,5 @@
+water 102681
+sand 112349
+background 208409
+ice 2737
+roc 178019
