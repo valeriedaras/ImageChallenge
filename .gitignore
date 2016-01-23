@@ -7,3 +7,5 @@
 # Exceptions
     !filtered-segmented.tif
     !clustered*.tif
+    !statistics.txt
+    !stat.txt
