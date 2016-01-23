@@ -1,0 +1,5 @@
+water : -49.21 %
+sand : -72.86 %
+background : 10.85 %
+ice : -100.00 %
+roc : 31.55 %

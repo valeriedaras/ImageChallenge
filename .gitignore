@@ -6,3 +6,6 @@
 
 # Exceptions
     !filtered-segmented.tif
+    !statistics.txt
+    !stat.txt
+    !clustered.tif
